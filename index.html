@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <!-- MENU -->
+    <nav class="navigationBar" id="navigationBar">
+        <div class="menuContainer container">
+            <div class="logo"><a href="#header">Charly V_O</a></div>
+
+            <div class="btnMenu button" id="btnMenu">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <div class="menu" id="menu">
+                <div class="btnExit button" id="btnExit">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <li><a href="#header" id="links">Inicio</a></li>
+                <li><a href="#aboutMe" id="links">Sobre Mi</a></li>
+                <li><a href="#skillSet">Skill Set</a></li>
+                <li><a href="#footer">Contacto</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="header" id="header">
+        <div class="hero container">
+            <h1 class="heroTitle">Hola! <br> Mi Nombre es Carlos</h1>
+            <h2 class="heroSubTitle">Bienvenido a mi Portafolio.</h2>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- About Me -->
+        <section class="aboutMe" id="aboutMe">
+            <h2 class="title">Sobre Mi</h2>
+            <div class="aboutMeContent container">
+                <div class="aboutMeText">
+                    <p>Soy un Desarrollador Web Junior</p>
+                    <p>Y mi objetivo es seguir aprendiendo sobre el mundo del desarrollo Web.</p>
+                </div>
+                <div class="aboutMeImage">
+                    <img src="images/aboutMeImage.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Servives -->
+        <section class="skillSet" id="skillSet">
+            <h2 class="title">Skill Set</h2>
+            <div class="skillContainer container">
+                <div class="skill">
+                    <div class="skillContent">
+                        <h3 class="skillTitle">Diseño Web</h3>
+                        <p class="skillDesc">Creacion y Diseño de Paginas Web Utilizando HTML5, CSS3 y JavaScript.</p>
+
+                        <div class="skillIcon">
+                            <div class="htmlIcon"><i class='bx bxl-html5'></i></div>
+                            <div class="cssIcon"><i class='bx bxl-css3'></i></div>
+                            <div class="jsIcon"><i class='bx bxl-javascript'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skillContent">
+                        <h3 class="skillTitle">Base de Datos</h3>
+                        <p class="skillDesc">Creacion y Gestion de Bases de Datos Relacionales Usando MySQL.</p>
+
+                        <div class="skillIcon">
+                            <div class="mySQLIcon"><img src="images/mySQL.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skillContent">
+                        <h3 class="skillTitle">Lenguajes de Programacion</h3>
+                        <p class="skillDesc">
+                            Uso de Lenguajes como Java y C# Para la Creacion de Aplicaciones de Escritorio.</p>
+
+                        <div class="skillIcon">
+                            <div class="javaIcon"><img src="images/java.jpg" alt=""></div>
+                            <div class="cSharpIcon"><img src="images/cSharp.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="subTitle">Conocimientos Basicos Sobre el Uso de</h2>
+            <div class="skillContainer container">
+                <div class="skill">
+                    <div class="skillContent">
+                        <h3 class="skillTitle">Hibernate</h3>
+                        <p class="skillDesc">Para la Creacion y Diseño de Sistemas en Java Utilizando el FrameWork
+                            Hibernate.</p>
+
+                        <div class="skillIcon">
+                            <div class="hibernateIcon"><img src="images/hibernate.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skillContent">
+                        <h3 class="skillTitle">Spring</h3>
+                        <p class="skillDesc">Para la Creacion y Diseño de Sistemas en Java Utilizando el FrameWork
+                            Spring.</p>
+
+                        <div class="skillIcon">
+                            <div class="springIcon"><img src="images/spring.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact -->
+    <footer id="footer" class="footer">
+        <div class="footerContent container">
+            <div class="contact">
+                <h3>Telefono</h3>
+                <p>5564177452</p>
+            </div>
+
+            <div class="contact">
+                <h3>Email</h3>
+                <p>jcarlosvo99@gmail.com</p>
+            </div>
+        </div>
+        <div class="footerName">Charly V_O</div>
+    </footer>
+
+    <script src="js/menu.js"></script>
+</body>
+
+</html>
