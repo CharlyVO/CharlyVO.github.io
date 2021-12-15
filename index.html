@@ -5,124 +5,184 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>Charly V_O - Portafolio</title>
-    <link rel="stylesheet" href="css/menu__style.css">
-    <link rel="stylesheet" href="css/hero__style.css">
-    <link rel="stylesheet" href="css/main__style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-    <!-- BoxIcons -->
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- BoxIcons-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- ---------------------
+        Navigation Sticky Bar
+       --------------------- -->
     <nav class="nav__bar" id="nav__bar">
-        <section class="nav__content">
-            <!-- Logo -->
-            <div class="nav__logo">Charly <span>V_O</span></div>
-
-            <!-- Style Switcher -->
-            <div class="style__switcher">
-                <!-- Style Color -->
-                <div class="change__color" id="change__color"></div>
-
-                <!-- Colors -->
-                <div class="color__container" id="color__container">
-                    <div class="color color1" id="color" title="style__color1"></div>
-                    <div class="color color2" id="color" title="style__color2"></div>
-                    <div class="color color3" id="color" title="style__color3"></div>
-                    <div class="color color4" id="color" title="style__color4"></div>
-                    <div class="color color5" id="color" title="style__color5"></div>
-                </div>
-
-                <!-- Dark Mode-->
-                <div class="sun__moon-container">
-                    <div class="icon" id="btn__dark-mode"><i class='bx bx-moon'></i></div>
-                    <div class="icon" id="btn__light-mode"><i class='bx bx-sun'></i></div>
-                </div>
+        <section class="nav__container">
+            <!-- Logotype -->
+            <div class="nav__logo">
+                <a href="#header">Charly V_O <span><i class='bx bx-ghost'></i></span></a>
             </div>
 
-            <!-- Menu Icon -->
-            <div class="btn__open-menu" id="btn__open-menu">
-                <i class='bx bx-menu'></i>
-            </div>
+            <!-- Open Menu Button -->
+            <div class="btn__openMenu menu__button" id="btn__openMenu"><i class='bx bx-menu'></i></div>
 
-            <!-- Menu -->
+            <!-- Nav Menu -->
             <div class="nav__menu" id="nav__menu">
-                <!-- Close Menu -->
-                <div class="btn__close-menu" id="btn__close-menu">
-                    <i class='bx bx-x'></i>
-                </div>
+                <!-- Button Close Menu -->
+                <div class="btn__closeMenu menu__button" id="btn__closeMenu"><i class='bx bx-x'></i></div>
 
                 <ul class="nav__list">
-                    <li class="nav__item actived__link hero" id="nav__item">
-                        <a href="#hero" class="nav__link">
-                            <i class='bx bx-home'></i>
-                            <span>Inicio</span>
-                        </a>
+                    <li class="nav__item header actived__link" id="nav__item">
+                        <a href="#header" class="nav__link"><i class='bx bx-home'></i> Inicio</a>
                     </li>
-                    <li class="nav__item about__me" id="nav__item">
-                        <a href="#about__me" class="nav__link">
-                            <i class='bx bx-user'></i>
-                            <span>Quien Soy</span>
-                        </a>
+
+                    <li class="nav__item about" id="nav__item">
+                        <a href="#about" class="nav__link"><i class='bx bx-user'></i> Quien Soy</a>
                     </li>
-                    <li class="nav__item skill__set" id="nav__item">
-                        <a href="#skill__set" class="nav__link">
-                            <i class='bx bxl-stack-overflow'></i>
-                            <span>Habilidades</span>
-                        </a>
+
+                    <li class="nav__item skills" id="nav__item">
+                        <a href="#skills" class="nav__link"><i class='bx bx-bar-chart-alt-2'></i> Habilidades</a>
                     </li>
-                    <li class="nav__item projects" id="nav__item">
-                        <a href="#projects" class="nav__link">
-                            <i class='bx bx-briefcase'></i>
-                            <span>Proyectos</span>
-                        </a>
+
+                    <li class="nav__item portfolio" id="nav__item">
+                        <a href="#portfolio" class="nav__link"><i class='bx bx-briefcase'></i> Portafolio</a>
                     </li>
                 </ul>
             </div>
         </section>
     </nav>
 
-    <header class="header section" id="hero">
-        <!-- Hero -->
-        <section class="hero__section">
-            <div class="hero__img">
-                <img src="images/foto.jpg" alt="Mi Foto">
+    <!-- --------------
+        Style Switcher
+       -------------- -->
+    <section class="style__switcher" id="style__switcher">
+        <!-- Buttons -->
+        <div class="switcher__container" id="btn__styleColor">
+            <!-- Style Color -->
+            <div class="btn__styleColor">
+                <i class='bx bxs-paint-roll'></i>
             </div>
-            
+        </div>
+
+        <!-- Colors -->
+        <div class="colors__container" id="colors__container">
+            <h3>Color del Estilo</h3>
+            <div class="colors">
+                <div class="color" id="style__color1">
+                    <i class='bx bxs-palette'></i>
+                </div>
+
+                <div class="color" id="style__color2">
+                    <i class='bx bxs-palette'></i>
+                </div>
+
+                <div class="color" id="style__color3">
+                    <i class='bx bxs-palette'></i>
+                </div>
+
+                <div class="color" id="style__color4">
+                    <i class='bx bxs-palette'></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------
+        Header - Hero
+       ------------- -->
+    <header class="header__container section" id="header">
+        <section class="hero">
+            <!-- Hero Photo -->
+            <div class="hero__img"><img src="images/foto.jpg" alt="Mi Foto"></div>
+
+            <!-- Hero Info -->
             <div class="hero__info">
-                <h1>Hola, soy <span>Carlos Vega</span></h1>
-                <h2>y soy <span id="typing"></span></h2>
+                <div class="info__text">
+                    <h1>Hola, mi nombre es <br> <span>Carlos Vega</span></h1>
+                    <p>y soy <span id="typing"></span></p>
+                </div>
+
+                <button class="btn__cv button"><a download="CV" href="cv/CV.pdf">Descargar CV</a></button>
             </div>
         </section>
     </header>
 
+    <!-- ------------
+        Main Section
+       ------------ -->
     <main class="main">
-        <!-- About Me -->
-        <section class="about__section container section" id="about__me">
-            <h2>About Me!</h2>
+        <!-- ------------- 
+            About Section
+           ------------- -->
+        <section class="about__section container section" id="about">
+            <!-- Section Title -->
+            <h2 class="section__title">¿Quien Soy?</h2>
         </section>
 
-        <!-- Skills Set -->
-        <section class="skill__section container section" id="skill__set">
-            <h2>Skill Set!</h2>
+        <!-- -------------- 
+            Skills Section
+           -------------- -->
+        <section class="skills__section container section" id="skills">
+            <!-- Section Title -->
+            <h2 class="section__title">Habilidades</h2>
         </section>
 
-        <!-- Projects -->
-        <section class="projects__section container section" id="projects">
-            <h2>Projects</h2>
+        <!-- -----------------
+            Portfolio Section
+           ----------------- -->
+        <section class="portfolio__section container section" id="portfolio">
+            <!-- Section Title -->
+            <h2 class="section__title">Portafolio</h2>
+
+            <!-- Recent Projects -->
+            <div class="portfolio__cards">
+                <div class="portfolio__card" id="portfolio__card">
+                    <!-- Project Image-->
+                    <div class="card__img">
+                        <img src="images/dashboard.png" alt="Imagen Proyecto">
+
+                        <!-- Hover Effect -->
+                        <div class="hover__card">
+                            <span><i class='bx bx-bullseye'></i> <br> Ver Proyecto</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Title -->
+                    <div class="card__title">Responsive Dashboard</div>
+
+                    <!-- Project Details -->
+                    <div class="project__details" id="project__details">
+                        <p class="details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi debitis, eaque
+                            odio molestiae, maxime non libero vel quia provident labore facere earum expedita. Quod
+                            possimus repudiandae aliquid suscipit repellendus hic?</p>
+
+                        <p class="technologies">HTML, CSS, JS</p>
+
+                        <P class="role">Front-End</P>
+
+                        <p class="link">https://charlyvo.github.io/</p>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- ---------------------
+            Project Details PopUp 
+           --------------------- -->
+
     </main>
 
+    <!-- -------
+        Scripts
+       ------- -->
     <script src="js/menu__script.js"></script>
-    <script src="js/dark__mode-script.js"></script>
-    <script src="js/style__color-script.js"></script>
+    <script src="js/style__color.js"></script>
 
-    <!-- Typed Animation Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
-    <script src="js/typed__script.js"></script>
+
+    <!-- Text Typing Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script src="js/text__typing.js"></script>
 </body>
 
 </html>

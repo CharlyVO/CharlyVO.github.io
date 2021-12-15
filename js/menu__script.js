@@ -1,50 +1,70 @@
 const navBar = document.querySelector('#nav__bar');
-const navMenu = document.querySelector('#nav__menu');
 const navItems = document.querySelectorAll('#nav__item');
-const btnOpenMenu = document.querySelector('#btn__open-menu');
-const btnCloseMenu = document.querySelector('#btn__close-menu');
+const sections = document.querySelectorAll('.section');
+const navMenu = document.querySelector('#nav__menu');
+const btnOpenMenu = document.querySelector('#btn__openMenu');
+const btnCloseMenu = document.querySelector('#btn__closeMenu');
 
-/* Funcion para cambiar el color de la barra de navegacion */
+/* *********************
+    Navigation Sticky Bar
+     ********************* */
 window.onscroll = () => {
-    if(!navBar.classList.contains('nav__dark-mode')) {
-        this.scrollY > 20 ? navBar.classList.add('sticky') : navBar.classList.remove('sticky');
-    }
+    this.scrollY > 20 ? navBar.classList.add('sticky__bar') : navBar.classList.remove('sticky__bar');
 }
 
-/* Mostramos el Menu */
-btnOpenMenu.addEventListener('click', () => {
-    navMenu.classList.add('show__menu');
-    btnOpenMenu.classList.add('hide__btn');
-});
+/* ******************
+    Indicador del Menu
+     ****************** */
+function activedLink () {
+    navItems.forEach((item) => item.classList.remove('actived__link'));
+    this.classList.add('actived__link');
+}
 
-/* Ocultamos el Menu */
-btnCloseMenu.addEventListener('click', () => {
-    navMenu.classList.remove('show__menu');
-    btnOpenMenu.classList.remove('hide__btn');
-});
+navItems.forEach((item) => item.addEventListener('click', activedLink));
 
-/* Cerrar Menu al Navegar */
-navItems.forEach((item) => item.addEventListener('click', () => {
-    navMenu.classList.remove('show__menu');
-    btnOpenMenu.classList.remove('hide__btn');
-}));
-
-/* Cambiamos el Indicador del Menu al hacer Scroll */
+/* ****************************************
+    Cambiar el indicador a la seccion actual 
+     **************************************** */
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        const idCurrentSection = entry.target.id;
-        const currentLink = document.querySelector(`.nav__list .${idCurrentSection}`);
-
         if (entry.isIntersecting) {
-            document.querySelector('.actived__link').classList.remove('actived__link');
+            const idCurrentSection = entry.target.id;
+            const currentLink = document.querySelector(`.nav__list .${idCurrentSection}`);
+            const lastLink = document.querySelector('.actived__link');
+            
+            lastLink.classList.remove('actived__link');
             currentLink.classList.add('actived__link');
+
+            console.log(lastLink);
             console.log(currentLink);
         }
     });
 }, {
+    root: null,
     rootMargin: '0px',
     threshold: 0.8
 });
 
-const sections = document.querySelectorAll('.section');
 sections.forEach((section) => observer.observe(section));
+
+/* **********************************
+    Abrimos Menu en Pantallas Pequeñas
+     ********************************** */
+btnOpenMenu.addEventListener('click', () => {
+    navMenu.classList.add('show__menu');
+    btnOpenMenu.classList.add('hide__button');
+
+    /* Si esta abierto el contenedor de los colores, cierralo */
+    styleSwitcher.classList.remove('show__colors');
+});
+
+btnCloseMenu.addEventListener('click', () => {
+    navMenu.classList.remove('show__menu');
+    btnOpenMenu.classList.remove('hide__button');
+});
+
+/* Cerramos el Menu al dar click en algun link */
+navItems.forEach((item) => item.addEventListener('click', () => {
+    navMenu.classList.remove('show__menu');
+    btnOpenMenu.classList.remove('hide__button');
+}));
