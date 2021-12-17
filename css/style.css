@@ -67,15 +67,18 @@
     scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.popup__project::-webkit-scrollbar {
     width: 8px;
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.popup__project::-webkit-scrollbar-track {
     background: var(--body-background);
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.popup__project::-webkit-scrollbar-thumb {
     background: var(--style-color);
     border-radius: 6px;
 }
@@ -86,6 +89,10 @@ body {
     background: var(--body-background);
     position: relative;
     transition: background 0.5s ease;
+}
+
+body.hide__scrollbar {
+    overflow-y: hidden;
 }
 
 /* Buttons */
@@ -108,7 +115,6 @@ body {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    
     transition: all 0.5s ease;
 }
 
@@ -122,8 +128,8 @@ body {
     width: 90%;
     max-width: 92rem;
     height: 100%;
-    margin: 15px auto;
-    padding: 30px;
+    margin: auto;
+    padding: 50px 0 30px 0;
     background: transparent;
 }
 
@@ -330,6 +336,7 @@ body {
     width: 45px;
     height: 45px;
     margin-right: 25px;
+    padding-top: 2px;
     background: transparent;
     border: 3px solid var(--style-color);
     border-radius: 50%;
@@ -337,15 +344,20 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transform: rotate(45deg);
-    transition: transform 0.5s ease;
+    animation: rotate 10s linear infinite;
 }
 
-.switcher__container:hover {
-    transform: rotate(-135deg);
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-.switcher__container div i {
+.switcher__container .btn__styleColor i {
     color: var(--style-color);
     font-size: 1.7rem;
     font-weight: 600;
@@ -507,87 +519,263 @@ body {
 /* ****************
     About Me Section
      **************** */ 
-.about__section,
-.skills__section {
+.about__section {
     height: 100vh;
+}
+
+
+
+/* **************
+    Skills Section
+     ************** */ 
+.skills__container {
+    width: 90%;
+    margin: auto;
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}     
+
+/* Skills Cards */
+.skill__card {
+    width: 100%;
+    max-width: 260px;
+    height: 230px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+.skill__card i {
+    margin-bottom: 5px;
+    color: var(--style-color);
+    font-size: 3.8rem;
+    font-weight: 500;
+}
+
+.skill__card span {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.skill__card:hover {
+    background: var(--style-color);
+    transform: scale(1.1);
+}
+
+.skill__card:hover i,
+.skill__card:hover span {
+    color: #fff;
 }
 
 
 /* *****************
     Portfolio Section
      ***************** */ 
-.portfolio__cards {
-    width: 95%;
+.projects__container {
+    padding: 30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 60px;
 }
 
-/* Card Image */
-.portfolio__card .card__img {
+/* Project Item */
+.project__item {
     width: 100%;
-    height: 200px;
-    padding: 15px;
-    background: var(--nav-background);
-    border-radius: 20px;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    transition: background 0.3s ease;
+    max-width: 380px;   
 }
 
-.card__img img {
+.project__item .item__img {
+    width: 100%;
+    height: 230px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.item__img div {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.item__img div img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.hover__card {
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
-    background: var(--default-color);
-    border: 3px solid var(--style-color);
-    border-radius: 10px;
+/* Project Title */
+.item__title {
+    margin: 15px 0 0 15px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+/* Project Button */
+.btn__project {
+    margin: 15px;
+}
+
+/* Project Details */
+.item__details {
+    display: none;
+}
+
+
+
+/* *********************
+    Project Details PopUp 
+     ********************* */
+.popup__project {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 100;
+    overflow-y: auto;
+    transition: left 0.7s ease;
+}
+
+.popup__project.show__popup {
+    left: 0;
+}
+
+.popup__container {
+    width: 90%;
+    max-width: 900px;
+    margin: 45px auto;
+    padding: 50px;
+    background: var(--body-background);
+    border-radius: 30px;
+    position: relative;
+    transform: scale(0);
+    transition: transform 0.5s 0.7s ease;
+}
+
+.popup__project.show__popup .popup__container {
+    transform: scale(1);
+}
+
+.btn__closePopup {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: var(--style-color);
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 15px;
-    left: 15px;
-    transform: scale(0);
-    transition: transform 0.6s ease;
+    top: -15px;
+    right: -15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-.card__img:hover .hover__card {
-    transform: scale(1);
+.btn__closePopup:hover {
+    transform: scale(1.1);
 }
 
-.hover__card span {
-    color: var(--style-color);
-    text-align: center;
-    font-size: 1.3rem;
+.btn__closePopup i {
+    font-size: 2rem;
     font-weight: 600;
 }
 
-.hover__card span i {
-    font-size: 2.5rem;
+.popup__img {
+    width: 100%;
+    box-shadow: 2px -2px 25px -15px black;
 }
 
-/* Card Title */
-.portfolio__card .card__title {
-    margin: 20px 0 0 10px;
+.popup__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup__title {
+    margin: 15px;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.popup__description {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.popup__details {
+    margin-left: 15px;
+}
+
+.popup__details ul {
+    list-style: none;
+}
+
+.popup__details ul li {
     color: var(--title-color);
-    font-size: 1.3rem;
+    font-size: 18px;
     font-weight: 600;
 }
 
-/* ***************
-    Project Details
-     *************** */
-     
-.project__details {
-    display: none;
+.popup__details ul li span {
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+
+
+/* ******
+    Footer
+     ****** */
+.footer {
+    padding: 20px;
+    background: var(--dark-color);
+}     
+
+.footer__container {
+    width: 90%;
+    margin: auto;
+    background: transparent;
+    text-align: center;
+}
+
+.footer__container h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.footer__container hr {
+    margin: 10px;
+    background: #fff;
+}
+
+.footer__container p {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.footer__container p span {
+    margin: 0 2px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 
@@ -599,6 +787,21 @@ body {
 /* *****************
     Responsive Design
      ***************** */
+
+@media screen and (max-width: 1100px) {
+
+    /* Skills Container */
+    .skills__container {
+        width: 100%;
+    }
+
+    /* Portfolio Section */
+    .projects__container {
+        padding: 0;
+        gap: 30px;
+    }
+    
+}     
 
 @media screen and (max-width: 940px) {
 
@@ -662,6 +865,58 @@ body {
     .hero__info {
         margin: auto;
     }
+
+
+    /* Skills Section */
+    /* Skills Container */
+    .skills__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Portfolio Section */
+    .projects__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+    }
+
+    .project__item .item__title {
+        font-size: 1.3rem;
+    }
+    
+}
+
+@media screen and (max-width: 760px) {
+
+    /* Skills Section */
+    /* Skills Container */
+    .skills__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Portfolio Section */
+    .projects__container {
+        gap: 20px;
+    }
+
+    /* PopUp Container */
+    .popup__container {
+        padding: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+
+    /* Portfolio Section */
+    .projects__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .project__item {
+        margin: auto;
+    }
     
 }
 
@@ -694,6 +949,17 @@ body {
         font-size: 14px;
     }
 
+    /* Skills Section */
+    /* Skills Container */
+    .skills__container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .skills__container .skill__card {
+        margin: auto;
+    }
+
     /* Header Section - Hero */
     .hero__img {
         width: 230px;
@@ -703,6 +969,11 @@ body {
     .info__text h1 span,
     .hero__info button {
         margin-left: 0;
+    }
+
+    /* PopUp Container */
+    .popup__container .popup__description {
+        font-size: 14px;
     }
     
 }
@@ -730,5 +1001,19 @@ body {
     .info__text p {
         font-size: 1.2rem;
     }
-    
+
+    /* Skills Section */
+    .skill__card {
+        height: 190px;
+    }
+
+    /* Portfolio Section */
+    .project__item {
+        margin: auto;
+    }
+
+    .project__item .item__img {
+        height: 180px;
+    }
+
 }
