@@ -707,7 +707,7 @@ body.hide__scrollbar {
 }
 
 .footer__info .links {
-    margin: 0 200px;
+    margin: 0 100px;
     text-align: center;
     color: var(--white);
 }
@@ -830,6 +830,11 @@ body.hide__scrollbar {
     /*** Skills Section ***/
     .skills {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*** Footer Section ***/
+    .footer__info .links {
+        margin: 0 20px;
     }
     
 }
