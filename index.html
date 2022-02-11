@@ -5,418 +5,307 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charly V_O - Portafolio</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Charly V_O | Portafolio</title>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- BoxIcons-->
+    <!-- Icons -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <!-- ---------------------
-        Navigation Sticky Bar
-       --------------------- -->
+    <!-- Preloader Starts -->
+    <section class="preloader" id="preloader">
+        <div class="loading"></div>
+    </section>
+    <!-- Preloader Starts -->
+
+    <!-- Navigation Bar Starts -->
     <nav class="nav__bar" id="nav__bar">
-        <section class="nav__container">
-            <!-- Logotype -->
-            <div class="nav__logo">
-                <a href="#header">Charly V_O <span><i class='bx bx-ghost'></i></span></a>
+        <section class="container">
+            <!-- Nav Bar Logotype -->
+            <div class="logotype">
+                <a href="#header">Charly V_O <i class='bx bx-ghost'></i></a>
             </div>
 
-            <!-- Open Menu Button -->
-            <div class="btn__openMenu menu__button" id="btn__openMenu"><i class='bx bx-menu'></i></div>
+            <!-- Open Nav Menu Button -->
+            <div class="menu__button" id="open__menu"><i class='bx bx-menu'></i></div>
 
-            <!-- Nav Menu -->
+            <!-- Nav Menu Starts -->
             <div class="nav__menu" id="nav__menu">
-                <!-- Button Close Menu -->
-                <div class="btn__closeMenu menu__button" id="btn__closeMenu"><i class='bx bx-x'></i></div>
+                <!-- Close Nav Menu Button -->
+                <div class="menu__button" id="close__menu"><i class='bx bx-x'></i></div>
 
                 <ul class="nav__list">
-                    <li class="nav__item header actived__link" id="nav__item">
-                        <a href="#header" class="nav__link"><i class='bx bx-home'></i> Inicio</a>
+                    <li class="nav__item" id="nav__item">
+                        <a href="#header" class="link__item active__link">
+                            <i class='bx bx-home'></i>
+                            <span>Inicio</span>
+                        </a>
                     </li>
 
-                    <li class="nav__item about" id="nav__item">
-                        <a href="#about" class="nav__link"><i class='bx bx-user'></i> Quien Soy</a>
+                    <li class="nav__item" id="nav__item">
+                        <a href="#skills" class="link__item">
+                            <i class='bx bx-bar-chart-alt-2'></i>
+                            Habilidades
+                        </a>
                     </li>
 
-                    <li class="nav__item skills" id="nav__item">
-                        <a href="#skills" class="nav__link"><i class='bx bx-bar-chart-alt-2'></i> Habilidades</a>
-                    </li>
-
-                    <li class="nav__item portfolio" id="nav__item">
-                        <a href="#portfolio" class="nav__link"><i class='bx bx-briefcase'></i> Portafolio</a>
+                    <li class="nav__item" id="nav__item">
+                        <a href="#portfolio" class="link__item">
+                            <i class='bx bx-briefcase'></i>
+                            Portafolio
+                        </a>
                     </li>
                 </ul>
             </div>
+            <!-- Nav Menu Ends -->
         </section>
     </nav>
+    <!-- Navigation Bar Ends -->
 
-    <!-- --------------
-        Style Switcher
-       -------------- -->
+    <!-- Style Switcher Starts -->
     <section class="style__switcher" id="style__switcher">
-        <!-- Buttons -->
-        <div class="switcher__container" id="btn__styleColor">
-            <!-- Style Color -->
-            <div class="btn__styleColor">
-                <i class='bx bx-cog'></i>
-            </div>
-        </div>
+        <!-- Switcher Button -->
+        <div class="btn__switcher" id="btn__switcher"><i class='bx bx-cog'></i></div>
 
-        <!-- Colors -->
-        <div class="colors__container" id="colors__container">
+        <!-- Colors Container -->
+        <div class="colors__container">
             <h3>Color del Estilo</h3>
             <div class="colors">
-                <div class="color" id="style__color1">
-                    <i class='bx bxs-palette'></i>
-                </div>
-
-                <div class="color" id="style__color2">
-                    <i class='bx bxs-palette'></i>
-                </div>
-
-                <div class="color" id="style__color3">
-                    <i class='bx bxs-palette'></i>
-                </div>
-
-                <div class="color" id="style__color4">
-                    <i class='bx bxs-palette'></i>
-                </div>
+                <div class="color" id="style__color1"><i class='bx bxs-palette'></i></div>
+                <div class="color" id="style__color2"><i class='bx bxs-palette'></i></div>
+                <div class="color" id="style__color3"><i class='bx bxs-palette'></i></div>
+                <div class="color" id="style__color4"><i class='bx bxs-palette'></i></div>
             </div>
         </div>
     </section>
+    <!-- Style Switcher Ends -->
 
-    <!-- -------------
-        Header - Hero
-       ------------- -->
-    <header class="header__container section" id="header">
-        <section class="hero">
-            <!-- Hero Photo -->
-            <div class="hero__img"><img src="images/foto.jpg" alt="Mi Foto"></div>
+    <!-- Header Section Starts -->
+    <header class="header__section" id="header">
+        <!-- Section Indicator -->
+        <div class="section__indicator" id="#header"></div>
 
-            <!-- Hero Info -->
-            <div class="hero__info">
-                <div class="info__text">
-                    <h1>Hola, mi nombre es <br> <span>Carlos Vega</span></h1>
-                    <p>y soy <span id="typing"></span></p>
-                </div>
+        <section class="header__container container">
+            <!-- Header Info -->
+            <div class="header__info">
+                <h2 class="typing">Hola, soy <span>Carlos Vega</span></h3>
 
-                <button class="btn__cv button"><a download="CV" href="cv/CV.pdf">Descargar CV</a></button>
+                    <p>Ingeniero en Computación recién egresado y Desarrollador Web Junior en busca de una oportunidad
+                        de trabajo para poder ampliar mis conocimientos y así obtener experiencia laboral.</p>
+                    <button class="button"><a href="CV/CV.pdf" download="CV">Descargar CV</a></button>
+            </div>
+
+            <!-- Header Image -->
+            <div class="header__image">
+                <div class="typing">[<span id="typing1"></span>]</div>
+                <div class="typing">[<span id="typing2"></span>]</div>
+                <div class="typing">[<span id="typing3"></span>]</div>
+                <div class="typing">[<span id="typing4"></span>]</div>
+                <img src="images/heroImage.svg" alt="Hero Image">
             </div>
         </section>
     </header>
+    <!-- Header Section Ends -->
 
-    <!-- ------------
-        Main Section
-       ------------ -->
-    <main class="main">
-        <!-- ------------- 
-            About Section
-           ------------- -->
-        <section class="about__section container section" id="about">
-            <!-- Section Title -->
-            <h2 class="section__title">¿Quien Soy?</h2>
-        </section>
+    <!-- Main Section Starts -->
+    <main class="main__section">
+        <!-- Abilities Section Starts -->
+        <section class="skills__section" id="skills">
+            <!-- Section Indicator -->
+            <div class="section__indicator" id="#skills"></div>
 
-        <!-- -------------- 
-            Skills Section
-           -------------- -->
-        <section class="skills__section container section" id="skills">
-            <!-- Section Title -->
-            <h2 class="section__title">Habilidades</h2>
+            <div class="skills__container container">
+                <!-- Section Title -->
+                <h2 class="title"><span>Habilidades</span></h2>
 
-            <!-- Skills Container -->
-            <div class="skills__container">
-                <!-- Skill Card-->
-                <div class="skill__card">
-                    <i class='bx bxl-html5'></i>
-                    <span>HTML5</span>
-                </div>
-
-                <!-- Skill Card-->
-                <div class="skill__card">
-                    <i class='bx bxl-css3'></i>
-                    <span>CSS3</span>
-                </div>
-
-                <!-- Skill Card-->
-                <div class="skill__card">
-                    <i class='bx bxl-javascript'></i>
-                    <span>JavaScript</span>
-                </div>
-
-                <!-- Skill Card-->
-                <div class="skill__card">
-                    <i class='bx bxs-data'></i>
-                    <span>MySQL</span>
-                </div>
-
-                <!-- Skill Card-->
-                <div class="skill__card">
-                    <i class='bx bxl-php'></i>
-                    <span>PHP</span>
-                </div>
-
-                <!-- Skill Card-->
-                <div class="skill__card">
-                    <i class='bx bxl-java'></i>
-                    <span>Java</span>
-                </div>
-
-                <!-- Skill Card-->
-                <div class="skill__card">
-                    <i class='bx bxs-copyright'></i>
-                    <span>C Sharp</span>
+                <div class="skills">
+                    <div class="skill__card">
+                        <i class='bx bxl-html5'></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill__card">
+                        <i class='bx bxl-css3'></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill__card">
+                        <i class='bx bxl-javascript'></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill__card">
+                        <i class='bx bxs-data'></i>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="skill__card">
+                        <i class='bx bxl-php'></i>
+                        <span>PHP</span>
+                    </div>
+                    <div class="skill__card">
+                        <i class='bx bxl-java'></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="skill__card">
+                        <i class='bx bxs-copyright'></i>
+                        <span>C-Sharp</span>
+                    </div>
                 </div>
             </div>
         </section>
+        <!-- Abilities Section Ends -->
 
-        <!-- -----------------
-            Portfolio Section
-           ----------------- -->
-        <section class="portfolio__section container section" id="portfolio">
-            <!-- Section Title -->
-            <h2 class="section__title">Portafolio</h2>
+        <!-- Portfolio Section Starts -->
+        <section class="portfolio__section" id="portfolio">
+            <!-- Section Indicator -->
+            <div class="section__indicator" id="#portfolio"></div>
 
-            <!-- Projects Container -->
-            <div class="projects__container">
-                <!-- Project Item -->
-                <div class="project__item project1" id="project__item">
-                    <!-- Project Image -->
-                    <div class="item__img">
-                        <div>
-                            <img src="images/dashboard.png" alt="Proyecto 1">
-                        </div>
-                    </div>
+            <div class="portfolio__container container">
+                <!-- Section Title -->
+                <h2 class="title"><span>Portafolio</span></h2>
 
-                    <!-- Project Title -->
-                    <h3 class="item__title">DashBoard Responsivo</h3>
-
-                    <!-- Button Show Details -->
-                    <button class="btn__project button" id="btn__project" title="project1"><a>Ver Proyecto</a></button>
-
-                    <!-- Project Details-->
-                    <div class="item__details">
-                        <div class="description">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque praesentium omnis
-                                dolores fugiat provident officia distinctio porro rem impedit? Hic.</p>
+                <!-- Projects -->
+                <div class="projects">
+                    <div class="project__card" id="project1">
+                        <!-- Project Image -->
+                        <div class="project__image">
+                            <div><img src="images/LoginRegisterSystem.png" alt="Project Image"></div>
                         </div>
 
+                        <!-- Project Title -->
+                        <h2 class="project__title">Sistema de Login y Registro</h2>
+
+                        <!-- Project Button -->
+                        <button class="button btn__project" id="project1"><a>Ver Projecto</a></button>
+
+                        <!-- Project General Info -->
                         <div class="general__info">
-                            <ul>
-                                <li>Tecnologias - <span>HTML, CSS, JS</span></li>
-                                <li>Role - <span>FrontEnd</span></li>
-                                <li>Ir al Sitio - <span>www.pagina1.com</span></li>
-                            </ul>
+                            <p class="description">Sistema de Registro de Usuarios e Inicio Sesion mediante el uso de $_SESSION en PHP. Diseño adaptable a cualquier dispositivo.</p>
+                            <div class="details">
+                                <ul>
+                                    <li>Tecnologias -<span>HTML, CSS, JavaScript, PHP, MySQL</span></li>
+                                    <li>Role -<span>Front-End</span></li>
+                                    <li>Ver Codigo - <a href="https://github.com/CharlyVO/Login-RegisterSystem.git" target="blank">Ir a Github</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Project Item -->
-                <div class="project__item project2" id="project__item">
-                    <!-- Project Image -->
-                    <div class="item__img">
-                        <div>
-                            <img src="images/img1.png" alt="Proyecto 2">
-                        </div>
-                    </div>
-
-                    <!-- Project Title -->
-                    <h3 class="item__title">Proyecto 2</h3>
-
-                    <!-- Button Show Details -->
-                    <button class="btn__project button" id="btn__project" title="project2"><a>Ver Proyecto</a></button>
-
-                    <!-- Project Details-->
-                    <div class="item__details">
-                        <div class="description">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque praesentium omnis
-                                dolores fugiat provident officia distinctio porro rem impedit? Hic.</p>
+                    <div class="project__card" id="project2">
+                        <!-- Project Image -->
+                        <div class="project__image">
+                            <div><img src="images/responsiveDashboard.png" alt="Project Image"></div>
                         </div>
 
+                        <!-- Project Title -->
+                        <h2 class="project__title">Dashboard Responsivo</h2>
+
+                        <!-- Project Button -->
+                        <button class="button btn__project" id="project2"><a>Ver Projecto</a></button>
+
+                        <!-- Project General Info -->
                         <div class="general__info">
-                            <ul>
-                                <li>Tecnologias - <span>HTML, CSS, JSHTML, CSS, JS</span></li>
-                                <li>Role - <span>FrontEndFrontEnd</span></li>
-                                <li>Ir al Sitio - <span>www.pagina2.com</span></li>
-                            </ul>
+                            <p class="description">Diseño de un Dashboard adaptable a cualquier dispositivo.</p>
+                            <div class="details">
+                                <ul>
+                                    <li>Tecnologias -<span>HTML, CSS, JavaScript</span></li>
+                                    <li>Role -<span>Front-End</span></li>
+                                    <li>Ver Codigo - <a href="https://github.com/CharlyVO/ResponsiveDashboard.git" target="blank">Ir a Github</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Project Item -->
-                <div class="project__item project3" id="project__item">
-                    <!-- Project Image -->
-                    <div class="item__img">
-                        <div>
-                            <img src="images/img2.png" alt="Proyecto 3">
-                        </div>
-                    </div>
-
-                    <!-- Project Title -->
-                    <h3 class="item__title">Hero</h3>
-
-                    <!-- Button Show Details -->
-                    <button class="btn__project button" id="btn__project" title="project3"><a>Ver Proyecto</a></button>
-
-                    <!-- Project Details-->
-                    <div class="item__details">
-                        <div class="description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro libero nisi distinctio quisquam, doloremque corporis sunt, assumenda nesciunt iusto non aut. Possimus veritatis incidunt, quasi, sint ex excepturi fugiat odit eaque mollitia corrupti laudantium! Magni aliquid nemo eaque nihil quaerat! Iusto reprehenderit sint molestiae sapiente fuga molestias quos labore!</p>
+                    <div class="project__card" id="project3">
+                        <!-- Project Image -->
+                        <div class="project__image">
+                            <div><img src="images/onlineBookStore.png" alt="Project Image"></div>
                         </div>
 
+                        <!-- Project Title -->
+                        <h2 class="project__title">Tienda en Linea</h2>
+
+                        <!-- Project Button -->
+                        <button class="button btn__project" id="project3"><a>Ver Projecto</a></button>
+
+                        <!-- Project General Info -->
                         <div class="general__info">
-                            <ul>
-                                <li>Tecnologias - <span>HTML</span></li>
-                                <li>Role - <span>End</span></li>
-                                <li>Ir al Sitio - <span>www.pagina2.com</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Item -->
-                <div class="project__item project1" id="project__item">
-                    <!-- Project Image -->
-                    <div class="item__img">
-                        <div>
-                            <img src="images/dashboard.png" alt="Proyecto 1">
-                        </div>
-                    </div>
-
-                    <!-- Project Title -->
-                    <h3 class="item__title">DashBoard Responsivo</h3>
-
-                    <!-- Button Show Details -->
-                    <button class="btn__project button" id="btn__project" title="project1"><a>Ver Proyecto</a></button>
-
-                    <!-- Project Details-->
-                    <div class="item__details">
-                        <div class="description">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque praesentium omnis
-                                dolores fugiat provident officia distinctio porro rem impedit? Hic.</p>
-                        </div>
-
-                        <div class="general__info">
-                            <ul>
-                                <li>Tecnologias - <span>HTML, CSS, JS</span></li>
-                                <li>Role - <span>FrontEnd</span></li>
-                                <li>Ir al Sitio - <span>www.pagina1.com</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Item -->
-                <div class="project__item project1" id="project__item">
-                    <!-- Project Image -->
-                    <div class="item__img">
-                        <div>
-                            <img src="images/dashboard.png" alt="Proyecto 1">
-                        </div>
-                    </div>
-
-                    <!-- Project Title -->
-                    <h3 class="item__title">DashBoard Responsivo</h3>
-
-                    <!-- Button Show Details -->
-                    <button class="btn__project button" id="btn__project" title="project1"><a>Ver Proyecto</a></button>
-
-                    <!-- Project Details-->
-                    <div class="item__details">
-                        <div class="description">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque praesentium omnis
-                                dolores fugiat provident officia distinctio porro rem impedit? Hic.</p>
-                        </div>
-
-                        <div class="general__info">
-                            <ul>
-                                <li>Tecnologias - <span>HTML, CSS, JS</span></li>
-                                <li>Role - <span>FrontEnd</span></li>
-                                <li>Ir al Sitio - <span>www.pagina1.com</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Item -->
-                <div class="project__item project1" id="project__item">
-                    <!-- Project Image -->
-                    <div class="item__img">
-                        <div>
-                            <img src="images/dashboard.png" alt="Proyecto 1">
-                        </div>
-                    </div>
-
-                    <!-- Project Title -->
-                    <h3 class="item__title">DashBoard Responsivo</h3>
-
-                    <!-- Button Show Details -->
-                    <button class="btn__project button" id="btn__project" title="project1"><a>Ver Proyecto</a></button>
-
-                    <!-- Project Details-->
-                    <div class="item__details">
-                        <div class="description">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque praesentium omnis
-                                dolores fugiat provident officia distinctio porro rem impedit? Hic.</p>
-                        </div>
-
-                        <div class="general__info">
-                            <ul>
-                                <li>Tecnologias - <span>HTML, CSS, JS</span></li>
-                                <li>Role - <span>FrontEnd</span></li>
-                                <li>Ir al Sitio - <span>www.pagina1.com</span></li>
-                            </ul>
+                            <p class="description">Diseño de una tienda de libros en linea adaptable a cualquier dispositivo.</p>
+                            <div class="details">
+                                <ul>
+                                    <li>Tecnologias -<span>HTML, CSS, JavaScript</span></li>
+                                    <li>Role -<span>Front-End</span></li>
+                                    <li>Ver Codigo - <a href="https://github.com/CharlyVO/OnlineBookStore.git" target="blank">Ir a Github</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Portfolio Section Ends -->
     </main>
+    <!-- Main Section Ends -->
 
-    <!-- ---------------------
-        Project Details PopUp 
-       --------------------- -->
-    <section class="popup__project" id="popup__project">
+    <!-- PopUp Project Section Starts -->
+    <section class="popup__section" id="popup__section">
         <div class="popup__container">
-            <!-- Close PopUp Button -->
-            <div class="btn__closePopup " id="btn__closePopup"><i class='bx bx-x'></i></div>
+            <!-- Close PopUp Container Button -->
+            <div class="close__popup" id="close__popup"><i class='bx bx-x'></i></div>
 
-            <!-- Current Project Image -->
-            <div class="popup__img">
-                <img src="" alt="Imagen Proyecto Actual">
-            </div>
+            <!-- PopUp Project Image -->
+            <div class="popup__image"><img src="" alt="Project Image"></div>
 
-            <!-- Current Project Title -->
+            <!-- PopUp Project Title -->
             <h2 class="popup__title"></h2>
 
-            <!--Current Project Details -->
+            <!-- PopUp Project Description -->
             <p class="popup__description"></p>
 
-            <!-- Current Project Details -->
+            <!-- PopUp Project Details -->
             <div class="popup__details"></div>
         </div>
     </section>
+    <!-- PopUp Project Section Ends -->
 
-    <!-- ------------
-        Footer Section
-       -------------- -->
-    <footer class="footer">
-        <div class="footer__container">
-            <h3>Charly V_O</h3>
-            <hr>
-            <p><i class='bx bx-copyright'></i> 2021 <span>Charly V_O</span> - Todos los derechos reservados.</p>
-        </div>
+    <!-- Footer Section Starts -->
+    <footer class="footer__section">
+        <section class="container">
+            <div class="footer__info">
+                <!-- Logotype -->
+                <div class="logotype">
+                    <a href="#header">Charly V_O <i class='bx bx-ghost'></i></a>
+                </div>
+
+                <div class="div">
+                    <!-- Links -->
+                    <div class="links">
+                        <h3>Navegar</h3>
+                        <ul>
+                            <li><a href="#header">Inicio</a></li>
+                            <li><a href="#skills">Habilidades</a></li>
+                            <li><a href="#portfolio">Portafolio</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="contact">
+                        <h3>Contacto</h3>
+                        <p>Correo: <span>jcarlosvo99@gmail.com</span></p>
+                        <p>Telefono: <span>55-6417-7452</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Rights -->
+            <div class="all__rights">
+                <h3><i class='bx bx-copyright'></i> 2022, Charly V_O. Todos los derechos reservados.</h3>
+            </div>
+        </section>
     </footer>
+    <!-- Footer Section Ends -->
 
-    <!-- -------
-        Scripts
-       ------- -->
-    <script src="js/menu__script.js"></script>
-    <script src="js/style__color.js"></script>
-    <script src="js/project__popup.js"></script>
-
+    <!-- Script -->
+    <script src="js/script.js"></script>
 
     <!-- Text Typing Animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
